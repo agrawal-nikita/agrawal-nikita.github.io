@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nikita Agrawal</title>
+  <meta name="description" content="Personal academic website of Nikita Agrawal, PhD student working on efficient LLM inference, KV cache compression, and LLM serving systems." />
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #1f2933;
+      --muted: #5b6775;
+      --line: #d8dee6;
+      --accent: #195aa6;
+      --accent-soft: #eaf2ff;
+      --card: #f8fafc;
+      --max-width: 980px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.58;
+      font-size: 17px;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .page {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 28px 20px 60px;
+    }
+
+    header {
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 14px;
+      margin-bottom: 30px;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .site-title {
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #111827;
+    }
+
+    nav {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-size: 15px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 210px 1fr;
+      gap: 32px;
+      align-items: start;
+      margin-bottom: 34px;
+    }
+
+    .photo {
+      width: 210px;
+      height: 240px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #e5e7eb, #f8fafc);
+      border: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-size: 15px;
+      text-align: center;
+      padding: 16px;
+    }
+
+    .intro h1 {
+      margin: 0 0 8px;
+      font-size: 30px;
+      line-height: 1.25;
+      color: #111827;
+    }
+
+    .subtitle {
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
+    .pill {
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: 999px;
+      padding: 5px 12px;
+      font-size: 14px;
+    }
+
+    section {
+      border-top: 1px solid var(--line);
+      padding-top: 24px;
+      margin-top: 28px;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin: 0 0 14px;
+      color: #111827;
+    }
+
+    h3 {
+      font-size: 19px;
+      margin: 18px 0 6px;
+      color: #111827;
+    }
+
+    .news-list,
+    .pub-list,
+    .plain-list {
+      padding-left: 20px;
+      margin: 10px 0 0;
+    }
+
+    .news-list li,
+    .pub-list li,
+    .plain-list li {
+      margin-bottom: 10px;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 13px;
+      color: #26415f;
+      background: var(--accent-soft);
+      border: 1px solid #d3e4ff;
+      border-radius: 4px;
+      padding: 1px 6px;
+      margin-right: 4px;
+      white-space: nowrap;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px 18px;
+      margin-top: 12px;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      margin-top: 36px;
+      padding-top: 16px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 720px) {
+      .hero,
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+
+      .photo {
+        width: 180px;
+        height: 210px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <div class="topbar">
+        <div class="site-title">Nikita Agrawal</div>
+        <nav aria-label="Main navigation">
+          <a href="#research">Research</a>
+          <a href="#publications">Publications</a>
+          <a href="#projects">Projects</a>
+          <a href="#teaching">Teaching</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero" style="border-top: none; padding-top: 0; margin-top: 0;">
+      <div class="photo">Add your portrait here<br />images/profile.jpg</div>
+      <div class="intro">
+        <h1>PhD Student in Computer Science</h1>
+        <p class="subtitle">University of Bayreuth · Efficient LLM Inference · KV Cache Compression · LLM Serving Systems</p>
+        <p>
+          I am a PhD student working on efficient serving of large language models. My research focuses on making long-context and agentic LLM workloads faster and more memory-efficient, with a particular interest in KV cache compression, prefix reuse, and practical inference systems.
+        </p>
+        <p>
+          I am interested in the intersection of machine learning systems, data systems, and performance engineering: how models are served, how memory is managed during inference, and how system-level choices affect latency, throughput, and task quality.
+        </p>
+        <div class="links">
+          <a class="pill" href="mailto:YOUR_EMAIL@example.com">Email</a>
+          <a class="pill" href="https://github.com/YOUR_GITHUB">GitHub</a>
+          <a class="pill" href="https://www.linkedin.com/in/nikagrawal/">LinkedIn</a>
+          <a class="pill" href="cv.pdf">CV</a>
+          <a class="pill" href="https://scholar.google.com/citations?user=YOUR_ID">Google Scholar</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="news">
+      <h2>What is new</h2>
+      <ul class="news-list">
+        <li><strong>May 2026:</strong> Started a research secondment at IBM Research Zurich.</li>
+        <li><strong>2026:</strong> Working on benchmarking KV cache optimization techniques across task quality and system performance for long-context LLM serving.</li>
+        <li><strong>2026:</strong> Exploring serving challenges for agentic workloads, including long traces, prefix reuse, and time-to-first-token behavior.</li>
+      </ul>
+    </section>
+
+    <section id="research">
+      <h2>Research interests</h2>
+      <div class="two-col">
+        <div class="card">
+          <h3>LLM inference systems</h3>
+          <p>Serving architectures for long-context and agentic workloads, with attention to TTFT, prefill/decode behavior, scheduling, and throughput.</p>
+        </div>
+        <div class="card">
+          <h3>KV cache optimization</h3>
+          <p>Compression, quantization, pruning, eviction, merging, and cache reuse techniques for reducing memory pressure while preserving model quality.</p>
+        </div>
+        <div class="card">
+          <h3>Benchmarking and evaluation</h3>
+          <p>Workload-aware evaluation across task quality, latency, throughput, and memory, especially for long-context benchmarks.</p>
+        </div>
+        <div class="card">
+          <h3>Federated and open models</h3>
+          <p>Model openness, post-training, and federated learning trade-offs across privacy, scalability, heterogeneity, and autonomy.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications">
+      <h2>Publications and manuscripts</h2>
+      <ol class="pub-list">
+        <li>
+          <strong>Benchmarking KV-Cache Optimizations across Task Quality and System Performance for Long-Context Serving.</strong><br />
+          <span class="muted">Manuscript in preparation.</span><br />
+          <span class="tag">LLM Serving</span><span class="tag">KV Cache</span><span class="tag">Benchmarking</span>
+        </li>
+        <li>
+          <strong>Federated Learning and Model Openness for Foundation Models.</strong><br />
+          <span class="muted">Position / survey-style manuscript.</span><br />
+          <span class="tag">Federated Learning</span><span class="tag">Open Models</span><span class="tag">Foundation Models</span>
+        </li>
+      </ol>
+    </section>
+
+    <section id="projects">
+      <h2>Selected projects</h2>
+      <div class="card">
+        <h3>KV cache compression benchmark</h3>
+        <p>
+          A system-level benchmark comparing KV cache compression methods such as quantization, pruning/eviction, and merging. The project studies quality-efficiency trade-offs across long-context workloads and reports metrics such as TTFT, prefill latency, throughput, and KV memory.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Agentic workload serving analysis</h3>
+        <p>
+          Analysis of traces and serving behavior for agentic LLM workloads, focusing on long input/output distributions, prefix reuse opportunities, scheduling effects, and latency bottlenecks.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Federated learning and openness taxonomy</h3>
+        <p>
+          A research thread studying how open-source, open-weight, gray-box, and black-box model access affects federated post-training of foundation models.
+        </p>
+      </div>
+    </section>
+
+    <section id="teaching">
+      <h2>Teaching and talks</h2>
+      <ul class="plain-list">
+        <li>Flower Summit talk on federated learning and model openness.</li>
+        <li>Academic presentations on efficient LLM inference and KV cache optimization.</li>
+        <li>Mentoring and teaching material can be added here.</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>
+        <strong>Email:</strong> <a href="mailto:YOUR_EMAIL@example.com">YOUR_EMAIL@example.com</a><br />
+        <strong>Office:</strong> University of Bayreuth, Germany<br />
+        <strong>GitHub:</strong> <a href="https://github.com/YOUR_GITHUB">github.com/YOUR_GITHUB</a><br />
+        <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/nikagrawal/">linkedin.com/in/nikagrawal</a>
+      </p>
+    </section>
+
+    <footer>
+      Last updated: May 2026. Built as a simple static academic website. Replace placeholders before publishing.
+    </footer>
+  </main>
+</body>
+</html>
